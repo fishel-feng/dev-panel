@@ -3,6 +3,6 @@ import { DevTextItem } from '../types';
 
 export const TextItem: Component<{ item: DevTextItem }> = (props) => {
   return (
-    <div>{props.item.value}</div>
+    <div class="font-medium">{props.item.value}</div>
   );
 };

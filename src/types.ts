@@ -27,7 +27,8 @@ export interface DevSelectItem {
     type: 'select';
     label: string;
     key: string;
-    options: { text: string; value: string }[];
+    multiple: boolean;
+    options: { label: string; value: string }[];
     onChange: (val: string) => void;
 }
 
