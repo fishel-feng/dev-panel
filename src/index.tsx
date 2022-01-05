@@ -41,42 +41,42 @@ export class DevPanel {
     this.content = content;
   }
 
-  private async loadPlugins() {
-    if (!this.plugins || !this.plugins.length) {
-      return;
-    }
-    for (const plugin of this.plugins) {
-      if (typeof plugin === "string") {
-        const fn = (await import(`./plugins/${plugin}`)).default;
-        if (typeof fn === "function" && fn.length === 1) {
-          this.pluginFuns.push(fn);
-        }
-      } else {
-        if (typeof plugin.name === "string") {
-          const pfn = (await import(`./plugins/${plugin}`)).default;
-          if (typeof pfn === "function" && pfn.length === 1) {
-            const fn = pfn(plugin.options);
-            if (typeof fn === "function" && fn.length === 1) {
-              this.pluginFuns.push(fn);
-            }
-          }
-        } else {
-          throw new Error("load plugin error, please check the plugin name");
-        }
-      }
-    }
-  }
+  // private async loadPlugins() {
+  //   if (!this.plugins || !this.plugins.length) {
+  //     return;
+  //   }
+  //   for (const plugin of this.plugins) {
+  //     if (typeof plugin === "string") {
+  //       const fn = (await import(`./plugins/${plugin}`)).default;
+  //       if (typeof fn === "function" && fn.length === 1) {
+  //         this.pluginFuns.push(fn);
+  //       }
+  //     } else {
+  //       if (typeof plugin.name === "string") {
+  //         const pfn = (await import(`./plugins/${plugin}`)).default;
+  //         if (typeof pfn === "function" && pfn.length === 1) {
+  //           const fn = pfn(plugin.options);
+  //           if (typeof fn === "function" && fn.length === 1) {
+  //             this.pluginFuns.push(fn);
+  //           }
+  //         }
+  //       } else {
+  //         throw new Error("load plugin error, please check the plugin name");
+  //       }
+  //     }
+  //   }
+  // }
 
   public async render(show?: boolean) {
     if (!show) {
       DevPanel.hide();
     }
-    await this.loadPlugins();
+    // await this.loadPlugins();
     render(
-      () => <App content={this.content} plugins={this.pluginFuns} />,
+      () => <App content={this.content} />,
       DevPanel.element
     );
-    this.pluginFuns.forEach((fn) => fn.call(this, DevPanel.element));
+    // this.pluginFuns.forEach((fn) => fn.call(this, DevPanel.element));
   }
 
   public static show() {

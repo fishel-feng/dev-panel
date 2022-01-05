@@ -22,15 +22,16 @@ import {
   DevTextItem,
 } from "./types";
 import { InputItem } from "./render/InputItem";
-import "./index.css";
+import styleInject from "style-inject";
+import css from "./index.css";
 
-const App: Component<{ content: DevItem[]; plugins: any[] }> = (props) => {
+styleInject(css);
+
+const App: Component<{ content: DevItem[] }> = (props) => {
   onMount(() => {
     console.log(33333);
   });
-  createSignal(() => {
-    // props.plugins
-  });
+  createSignal(() => {});
 
   return (
     <div class="w-full h-full bg-slate-900/25 rounded-md p-2 shadow-md relative">

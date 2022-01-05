@@ -1,23 +1,29 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^17.0.8
   autoprefixer: ^10.4.1
   postcss: ^8.4.5
   solid-js: ^1.2.6
+  style-inject: ^0.3.0
   tailwindcss: ^3.0.9
   typescript: ^4.5.4
   vite: ^2.7.6
+  vite-plugin-libcss: ^1.0.5
   vite-plugin-solid: ^2.1.4
 
 dependencies:
   solid-js: 1.2.6
+  style-inject: 0.3.0
 
 devDependencies:
+  '@types/node': 17.0.8
   autoprefixer: 10.4.1_postcss@8.4.5
   postcss: 8.4.5
   tailwindcss: 3.0.9_cefe482e8d38053bbf3d5815e0c551b3
   typescript: 4.5.4
   vite: 2.7.6
+  vite-plugin-libcss: 1.0.5_vite@2.7.6
   vite-plugin-solid: 2.1.4
 
 packages:
@@ -341,6 +347,10 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@types/node/17.0.8:
+    resolution: {integrity: sha512-YofkM6fGv4gDJq78g4j0mMuGMkZVxZDgtU0JRdx6FgiJDG+0fY0GKVolOV8WqVmEhLCXkQRjwDdKyPxJp/uucg==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -1141,6 +1151,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /style-inject/0.3.0:
+    resolution: {integrity: sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==}
+    dev: false
+
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -1213,6 +1227,14 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    dev: true
+
+  /vite-plugin-libcss/1.0.5_vite@2.7.6:
+    resolution: {integrity: sha512-NUQwWhn9j8fpRBwHeDr35a3TuRP0xvdIHtJni+3DcnPcq4Vrg+G5A3ZtCJ8y2EC83G97tBJ36svPdiIVuBEfsQ==}
+    peerDependencies:
+      vite: ^2
+    dependencies:
+      vite: 2.7.6
     dev: true
 
   /vite-plugin-solid/2.1.4:
