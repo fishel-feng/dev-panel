@@ -1,14 +1,14 @@
 {
   "name": "develop-panel",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A library for building a dev panel easily.",
   "files": ["dist"],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/dev-panel.umd.js",
+  "module": "./dist/dev-panel.es.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/dev-panel.es.js",
+      "require": "./dist/dev-panel.umd.js"
     }
   },
   "scripts": {
