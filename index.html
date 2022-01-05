@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
+    <title>Solid App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="width: 600px; height: 400px; margin: 20px;"></div>
+
+    <script src="/src/index.tsx" type="module"></script>
+    <script type="module">
+      import {DevPanel} from '/src/index.tsx';
+      DevPanel.create({
+        el: 'root',
+        plugins: ['reload'],
+        content: [
+          {
+              type: 'text',
+              value: '这时一个调试页面',
+          },
+          {
+              type: 'map',
+              label: '用户名',
+              value: 'test-user',
+          },
+          {
+              type: 'button',
+              value: '点我触发功能',
+              onClick: () => {
+                console.log('233');
+              },
+          },
+          {
+              type: 'switch',
+              label: '开启功能',
+              key: 'open',
+              default: false,
+              onChange: (val) => {
+                  console.log(val);
+              },
+          },
+          {
+              type: 'select',
+              label: '单选',
+              key: 'one',
+              options: [
+                  {
+                    label: '选项1',
+                      value: '0',
+                  },
+                  {
+                    label: '选项2',
+                      value: '1',
+                  },
+                  {
+                    label: '选项3',
+                      value: '2',
+                  },
+              ],
+              onChange: (val) => {
+                  console.log(val);
+              },
+          },
+          {
+              type: 'select',
+              label: '多选',
+              multiple: true,
+              key: 'two',
+              options: [
+                  {
+                    label: '选项1',
+                      value: '0',
+                  },
+                  {
+                    label: '选项2',
+                      value: '1',
+                  },
+                  {
+                    label: '选项3',
+                      value: '2',
+                  },
+              ],
+              onChange: (val) => {
+                  console.log(val);
+              },
+          },
+          {
+              type: 'input',
+              label: '输入 ID',
+              key: 'id',
+              default: '',
+              placeholder: '输入 ID',
+              onChange: (val) => {
+                  console.log(val);
+              },
+          },
+        ],
+      }).render(true);
+    </script>
+  </body>
+</html>

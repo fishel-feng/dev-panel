@@ -1,0 +1,35 @@
+{
+  "name": "dev-panel",
+  "version": "0.0.1",
+  "description": "A library for building a dev panel easily.",
+  "files": ["dist"],
+  "main": "./dist/my-lib.umd.js",
+  "module": "./dist/my-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "autoprefixer": "^10.4.1",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.9",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.6",
+    "vite-plugin-libcss": "^1.0.5",
+    "vite-plugin-solid": "^2.1.4"
+  },
+  "dependencies": {
+    "solid-js": "^1.2.6",
+    "style-inject": "^0.3.0"
+  }
+}
