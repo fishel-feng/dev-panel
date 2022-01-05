@@ -1,6 +1,6 @@
 {
-  "name": "dev-panel",
-  "version": "0.0.1",
+  "name": "develop-panel",
+  "version": "0.0.2",
   "description": "A library for building a dev panel easily.",
   "files": ["dist"],
   "main": "./dist/my-lib.umd.js",
